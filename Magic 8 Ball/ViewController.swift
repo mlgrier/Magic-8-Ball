@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         randomBallNumber = Int(arc4random_uniform(5))
-        imageView.image = UIImage(named: "ball1")
+        imageView.image = UIImage(named: ballArray[randomBallNumber])
         
     }
 
@@ -31,6 +31,19 @@ class ViewController: UIViewController {
 
     @IBAction func askButtonPressed(_ sender: UIButton) {
         
+        newBallImage()
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        
+        newBallImage()
+    }
+    
+    func newBallImage() {
+        
+        randomBallNumber = Int(arc4random_uniform(5))
+        imageView.image = UIImage(named: ballArray[randomBallNumber])
+    
     }
    
 
