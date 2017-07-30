@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         randomBallNumber = Int(arc4random_uniform(5))
+        imageView.image = UIImage(named: "ball1")
         
     }
 
